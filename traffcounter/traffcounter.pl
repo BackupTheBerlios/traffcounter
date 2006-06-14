@@ -1,16 +1,15 @@
 #!/usr/bin/perl -w
-
-$snmp_host = '192.168.21.1';
-$snmp_community = 'diwo';
-$snmp_part_MIB = '.1.3.6.1.2.1.2.2.1';
-$if_num = 1;
+#
+####################
+# Set this options
+####################
+$snmp_host = '';
+$snmp_community = '';
+$snmp_part_MIB = '.1.3.6.1.2.1.2.2.1'; # This value true for FreeBSD
+$if_num = 1; # Number of network interface
+####################
 
 use Net::SNMP;
-
-#my ($sec,$min,$hour,$mday,$mon,$year,$wday,$yday,$isdst) = localtime time;
-#$year = $year + 1900;
-#$mon = $mon + 1;
-#$unix_time = time;
 
 ($session,$error)=Net::SNMP->session(Hostname => $snmp_host,
 	Community => $snmp_community);
